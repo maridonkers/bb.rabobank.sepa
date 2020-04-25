@@ -1,38 +1,38 @@
-;; Converts Rabobank 2018 CSV-file format (as exported by Rabobank
-;; internet banking) to a KMyMoney importable format.
-;;
-;; https://www.rabobank.nl/images/formaatbeschrijving-csv-extensie_29933458.pdf
-;; https://www.rabobank.nl/images/transactiesoortcodes_29842987.pdf
-;;
-;; Version 0.1.0
-;;
-;; Requires Babashka -- https://github.com/borkdude/babashka
-;; Requires spartan.spec -- https://github.com/borkdude/spartan.spec
-;;
-;; See deps.edn and rabobank-sepa bash script.
-;;
-;; DEVELOPMENT
-;; ===========
-;; Start nrepl: `bb -cp "$(clojure -Spath)" --nrepl-server`
-;; Emacs: `cider-connect-clj` with reported port and `cider-repl-set-ns`.
-;;
-;; DISCLAIMER: THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
-;; CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
-;; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-;; MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-;; DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
-;; BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
-;; OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
-;; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-;; PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
-;; OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-;; (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
-;; USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
-;; DAMAGE.
-;;
-;; Twitter: @maridonkers | Google+: +MariDonkers | GitHub: maridonkers
-;;
 (ns rabobank.sepa
+  "Converts Rabobank 2018 CSV-file format (as exported by Rabobank
+  internet banking) to a KMyMoney importable format.
+
+  https://www.rabobank.nl/images/formaatbeschrijving-csv-extensie_29933458.pdf
+  https://www.rabobank.nl/images/transactiesoortcodes_29842987.pdf
+
+  Version 0.1.0
+
+  Requires Babashka -- https://github.com/borkdude/babashka
+  Requires spartan.spec -- https://github.com/borkdude/spartan.spec
+
+  See deps.edn and rabobank-sepa bash script.
+
+  DEVELOPMENT
+  ===========
+  Start nrepl: `bb -cp \"$(clojure -Spath)\" --nrepl-server`
+  Emacs: `cider-connect-clj` with reported port and `cider-repl-set-ns`.
+
+  DISCLAIMER: THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+  CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+  INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+  BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
+  OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+  OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+  USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+  DAMAGE.
+
+  Twitter: @maridonkers | Google+: +MariDonkers | GitHub: maridonkers"
+  
   (:require [clojure.string :as str]
             [spartan.spec :as s]
             [clojure.java.io :as io]))
